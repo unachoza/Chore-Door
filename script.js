@@ -1,4 +1,3 @@
-alert('hey!')
 const doorImage1 = document.getElementById('door1')
 const doorImage2 = document.getElementById('door2')
 const doorImage3 = document.getElementById('door3')
