@@ -31,7 +31,7 @@ const isClicked = (door) => {
   }
 
   const playDoor = (door) => {
-    numClosedDoors -1
+    numClosedDoors --
     if(numClosedDoors === 0 ){
       gameOver('win')
     }
@@ -83,7 +83,10 @@ door1.onclick = () => {
   }
 
   startButton.onclick = () => {
-      startRound()
+    if(!currentlyPlaying) {
+        startRound()
+
+    }
   }
   
   const startRound = () => {
