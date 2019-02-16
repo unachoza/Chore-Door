@@ -8,7 +8,7 @@ const beachDoorPath = 'https://s3.amazonaws.com/codecademy-content/projects/chor
 const spaceDoorPath = 'https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/space.svg'
 let closedDoorPath = 'https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/closed_door.svg'
 
-const numClosedDoors = 3
+let numClosedDoors = 3
 var openDoor1 = 0
 var openDoor2 = 0
 var openDoor3 = 0
@@ -81,7 +81,21 @@ door1.onclick = () => {
       playDoor(door3)
     }
   }
+
+  startButton.onclick = () => {
+      startRound()
+  }
   
+  const startRound = () => {
+    door1.src = closedDoorPath
+    door2.src = closedDoorPath
+    door3.src = closedDoorPath
+    numClosedDoors = 3
+    currentlyPlaying = true
+    startButton.innerHTML = "Good Luck!"
+    console.log('change innerHTML')
+    randomChoreDoorGenerator()
+}
   const gameOver = (status) =>{
     if(status === 'win'){
       startButton.innerHTML = "You Win! Play Again?"
